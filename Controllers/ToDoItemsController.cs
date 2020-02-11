@@ -23,7 +23,8 @@ namespace ToDoApi.Controllers {
             return await _context
                 .ToDoItems
                 .ToListAsync()
-                .ConfigureAwait(false);
+                .ConfigureAwait(false)
+            ;
         }
 
         // GET: api/ToDoItems/5
@@ -31,7 +32,8 @@ namespace ToDoApi.Controllers {
         public async Task<ActionResult<ToDoItem>> GetToDoItem(long id) {
             var toDoItem = await _context.ToDoItems
                 .FindAsync(id)
-                .ConfigureAwait(false);
+                .ConfigureAwait(false)
+            ;
 
             return toDoItem ?? (ActionResult<ToDoItem>) NotFound();
         }
@@ -50,7 +52,8 @@ namespace ToDoApi.Controllers {
             try {
                 await _context
                     .SaveChangesAsync()
-                    .ConfigureAwait(false);
+                    .ConfigureAwait(false)
+                ;
             } catch (DbUpdateConcurrencyException) when(!ToDoItemExists(id)) {
                 return NotFound();
             }
@@ -66,7 +69,8 @@ namespace ToDoApi.Controllers {
             _context.ToDoItems.Add(toDoItem);
             await _context
                 .SaveChangesAsync()
-                .ConfigureAwait(false);
+                .ConfigureAwait(false)
+            ;
             const string actionName = nameof(GetToDoItem);
 
             return CreatedAtAction(actionName, new { id = toDoItem.ID }, toDoItem);
@@ -77,7 +81,8 @@ namespace ToDoApi.Controllers {
         public async Task<ActionResult<ToDoItem>> DeleteToDoItem(long id) {
             var toDoItem = await _context.ToDoItems
                 .FindAsync(id)
-                .ConfigureAwait(false);
+                .ConfigureAwait(false)
+            ;
             if (toDoItem == null) {
                 return NotFound();
             }
@@ -85,7 +90,8 @@ namespace ToDoApi.Controllers {
             _context.ToDoItems.Remove(toDoItem);
             await _context
                 .SaveChangesAsync()
-                .ConfigureAwait(false);
+                .ConfigureAwait(false)
+            ;
 
             return toDoItem;
         }
@@ -94,7 +100,8 @@ namespace ToDoApi.Controllers {
             return _context.ToDoItems
                 .Any(e =>
                     e.ID == id
-                );
+                )
+            ;
         }
     }
 }
