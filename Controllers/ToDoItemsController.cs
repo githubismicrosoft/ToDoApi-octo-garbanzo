@@ -71,7 +71,7 @@ namespace ToDoApi.Controllers
         {
             _context.ToDoItems.Add(toDoItem);
             await _context.SaveChangesAsync().ConfigureAwait(false);
-            const string actionName = nameof(toDoItem);
+            const string actionName = nameof(GetToDoItem);
 
             return CreatedAtAction(actionName, new { id = toDoItem.ID }, toDoItem);
         }
