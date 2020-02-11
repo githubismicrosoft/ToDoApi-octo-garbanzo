@@ -71,8 +71,9 @@ namespace ToDoApi.Controllers
         {
             _context.ToDoItems.Add(toDoItem);
             await _context.SaveChangesAsync().ConfigureAwait(false);
-
-            return CreatedAtAction("GetToDoItem", new { id = toDoItem.ID }, toDoItem);
+            string actionName = "GetToDoItem";
+            
+            return CreatedAtAction(actionName, new { id = toDoItem.ID }, toDoItem);
         }
 
         // DELETE: api/ToDoItems/5
