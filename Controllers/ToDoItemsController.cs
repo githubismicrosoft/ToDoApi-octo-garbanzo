@@ -55,16 +55,9 @@ namespace ToDoApi.Controllers
             {
                 await _context.SaveChangesAsync().ConfigureAwait(false);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException) when (!ToDoItemExists(id))
             {
-                if (!ToDoItemExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
