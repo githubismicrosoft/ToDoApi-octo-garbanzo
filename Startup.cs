@@ -35,6 +35,11 @@ namespace ToDoApi {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
+            // Tutorial: ASP.NET Core web API with JavaScript
+            // https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-3.1
+            app.UseDefaultFiles();
+
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 
