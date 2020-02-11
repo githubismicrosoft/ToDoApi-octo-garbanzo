@@ -26,14 +26,19 @@ namespace ToDoApi.Controllers
         {
             return await _context
                 .ToDoItems
-                .ToListAsync().ConfigureAwait(false);
+                .ToListAsync()
+                .ConfigureAwait(false)
+            ;
         }
 
         // GET: api/ToDoItems/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ToDoItem>> GetToDoItem(long id)
         {
-            var toDoItem = await _context.ToDoItems.FindAsync(id).ConfigureAwait(false);
+            var toDoItem = await _context.ToDoItems
+                .FindAsync(id)
+                .ConfigureAwait(false)
+            ;
 
             return toDoItem ?? (ActionResult<ToDoItem>)NotFound();
         }
@@ -53,7 +58,10 @@ namespace ToDoApi.Controllers
 
             try
             {
-                await _context.SaveChangesAsync().ConfigureAwait(false);
+                await _context
+                    .SaveChangesAsync()
+                    .ConfigureAwait(false)
+                ;
             }
             catch (DbUpdateConcurrencyException) when (!ToDoItemExists(id))
             {
@@ -70,7 +78,10 @@ namespace ToDoApi.Controllers
         public async Task<ActionResult<ToDoItem>> PostToDoItem(ToDoItem toDoItem)
         {
             _context.ToDoItems.Add(toDoItem);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+            await _context
+                .SaveChangesAsync()
+                .ConfigureAwait(false)
+            ;
             const string actionName = nameof(GetToDoItem);
 
             return CreatedAtAction(actionName, new { id = toDoItem.ID }, toDoItem);
@@ -80,21 +91,30 @@ namespace ToDoApi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<ToDoItem>> DeleteToDoItem(long id)
         {
-            var toDoItem = await _context.ToDoItems.FindAsync(id).ConfigureAwait(false);
+            var toDoItem = await _context.ToDoItems
+                .FindAsync(id)
+                .ConfigureAwait(false)
+            ;
             if (toDoItem == null)
             {
                 return NotFound();
             }
 
             _context.ToDoItems.Remove(toDoItem);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+            await _context
+                .SaveChangesAsync()
+                .ConfigureAwait(false)
+            ;
 
             return toDoItem;
         }
 
         private bool ToDoItemExists(long id)
         {
-            return _context.ToDoItems.Any(e => e.ID == id);
+            return _context.ToDoItems
+                .Any(e =>
+                    e.ID == id
+                );
         }
     }
 }
