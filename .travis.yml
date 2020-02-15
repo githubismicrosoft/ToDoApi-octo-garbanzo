@@ -10,8 +10,11 @@ script:
 #  - find .
 #  - ls -l tools/sonar
 #  - chmod +x tools/sonar/*/bin/sonar-scanner
- - dotnet tool install --global dotnet-sonarscanner
+ - dotnet tool install --global dotnet-sonarscanner -v diag
+ - reset
  - dotnet restore
+ - dotnet sonar-scanner
+ - dotnet sonar-scanner begin
  - dotnet sonar-scanner begin -X
 #  - dotnet tools/sonar/sonar-scanner begin -X
  - dotnet build
