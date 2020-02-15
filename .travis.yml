@@ -14,7 +14,9 @@ script:
 #  - find .
 #  - ls -l tools/sonar
 #  - chmod +x tools/sonar/*/bin/sonar-scanner
- - dotnet tool install --global dotnet-sonarscanner -v diag
+ - find .
+ - ls -la
+ - dotnet tool install --global dotnet-sonarscanner
  - reset
  - export PATH=$PATH:/home/travis/.dotnet/tools
  - dotnet restore
