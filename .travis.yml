@@ -14,6 +14,7 @@ script:
 #  - find .
 #  - ls -l tools/sonar
 #  - chmod +x tools/sonar/*/bin/sonar-scanner
+ - env
  - echo ${SONAR_TOKEN}
  - echo $SONAR_TOKEN
  - echo "hello"
