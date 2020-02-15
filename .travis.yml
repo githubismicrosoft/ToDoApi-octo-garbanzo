@@ -20,10 +20,10 @@ script:
  - reset
  - export PATH=$PATH:/home/travis/.dotnet/tools
  - dotnet restore
- - dotnet-sonarscanner
- - dotnet sonarscanner
- - dotnet sonarscanner begin
- - dotnet sonarscanner begin -X
+ - dotnet-sonarscanner -h
+ - dotnet sonarscanner -h
+ - dotnet sonarscanner begin -h
+ - dotnet sonarscanner begin -X -h
 #  - dotnet tools/sonar/sonar-scanner begin -X
  - dotnet build
  - dotnet sonarscanner end -X
