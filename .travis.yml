@@ -6,11 +6,11 @@ dist: xenial
 
 script:
  - dotnet restore
- - sonar-scanner
- - sonar-scanner begin
+ - sonar-scanner -X
+ - sonar-scanner begin -X
  - dotnet build
- - sonar-scanner end
- 
+ - sonar-scanner end -X
+
 
 addons:
   sonarcloud:
