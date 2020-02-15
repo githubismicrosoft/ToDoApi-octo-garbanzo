@@ -6,7 +6,7 @@
   <SonarScannerWorkingDirectory>/Users/ml/proj/net-core/helloworlds/ToDoApi</SonarScannerWorkingDirectory>
   <HasBeginStepCommandLineCredentials>true</HasBeginStepCommandLineCredentials>
   <SonarQubeHostUrl>https://sonarcloud.io</SonarQubeHostUrl>
-  <SonarQubeVersion>8.0.0.4619</SonarQubeVersion>
+  <SonarQubeVersion>8.0.0.4669</SonarQubeVersion>
   <SonarProjectKey>githubismicrosoft_ToDoApi-octo-garbanzo</SonarProjectKey>
   <AdditionalConfig>
     <ConfigSetting Id="BuildUri" />
@@ -121,7 +121,7 @@
     <Property Name="sonar.core.serverBaseURL">https://sonarcloud.io</Property>
     <Property Name="sonar.lf.logoWidthPx">105</Property>
     <Property Name="sonar.core.id">1BD809FA-AWHW8ct9-T_TB3XqouNu</Property>
-    <Property Name="sonar.core.startTime">13/2/2020 2:00:57 am</Property>
+    <Property Name="sonar.core.startTime">14/2/2020 8:11:01 pm</Property>
   </ServerSettings>
   <LocalSettings>
     <Property Name="sonar.host.url">https://sonarcloud.io</Property>
