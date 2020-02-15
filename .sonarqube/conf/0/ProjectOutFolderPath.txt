@@ -1,1 +1,0 @@
-/Users/ml/proj/net-core/helloworlds/ToDoApi/.sonarqube/out/0
