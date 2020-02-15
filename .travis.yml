@@ -10,7 +10,8 @@ script:
 - dotnet tool install --global dotnet-sonarscanner
 - export PATH=$PATH:/home/travis/.dotnet/tools
 - dotnet restore
-- dotnet sonarscanner begin /d:sonar.host.url="https://sonarcloud.io" /k:"githubismicrosoft_ToDoApi-octo-garbanzo" /o:"githubismicrosoft" /d:./ci/sonar-project.properties /d:sonar.login=$SONAR_TOKEN
+- dotnet sonarscanner begin /d:sonar.host.url="https://sonarcloud.io" /k:"githubismicrosoft_ToDoApi-octo-garbanzo" /o:"githubismicrosoft" /d:sonar.login=$SONAR_TOKEN
+- rm -rf sonar-project.properties # hacky
 - dotnet build .
 - dotnet sonarscanner end  /d:sonar.login=$SONAR_TOKEN
 addons:
