@@ -7,8 +7,6 @@ dist: xenial
 script:
  - dotnet restore
  - sonar-scanner
- - build-wrapper-linux-x86-64 --out-dir bw-output dotnet restore
- - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 addons:
   sonarcloud:
