@@ -32,6 +32,8 @@ namespace ToDoApi.Controllers {
         [HttpGet]
         public IEnumerable<WeatherForecast> Get() {
             var rng = new Random();
+            _logger.LogInformation("WeatherForecastController:: Generating weather");
+
             return Enumerable
                 .Range(1, 5)
                 .Select(index =>
