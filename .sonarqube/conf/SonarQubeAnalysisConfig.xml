@@ -121,7 +121,7 @@
     <Property Name="sonar.core.serverBaseURL">https://sonarcloud.io</Property>
     <Property Name="sonar.lf.logoWidthPx">105</Property>
     <Property Name="sonar.core.id">1BD809FA-AWHW8ct9-T_TB3XqouNu</Property>
-    <Property Name="sonar.core.startTime">14/2/2020 8:11:01 pm</Property>
+    <Property Name="sonar.core.startTime">14/02/2020 20:11:01</Property>
   </ServerSettings>
   <LocalSettings>
     <Property Name="sonar.host.url">https://sonarcloud.io</Property>
